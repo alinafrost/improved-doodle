@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>happy rectangle</title>
+      
+<style>
+    
+    html, body {
+      height: 100%;  
+        
+    }
+    
+    body {
+        background-image: linear-gradient(#DDA5B6, #F2CC8C, #F1E6C1);
+        background-repeat: no-repeat;
+        font-family: Tahoma, Geneva, sans-serif ;
+        font-size: 20px;
+        color: #256c74;
+/*      #1f5a60  #256c74*/
+        
+    }
+    
+/*
+    #box_container {
+        border:1px solid red;
+
+    } 
+*/
+    
+
+        
+        
+    }
+    
+    input {
+        border-color: antiquewhite;
+        
+    }
+    
+
+    
+    #block_border {
+       margin-left: 20px;
+        margin-top: 20px;   
+    }
+    
+    button {
+        
+        box-sizing: border-box;
+  appearance: none;
+  background-color: transparent;
+/*  border: 2px solid $red;*/
+  border-radius: 0.6em;
+  color: #256c74;
+  cursor: pointer;
+  display: flex;
+  align-self: center;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1;
+  margin: 20px;
+  padding: 1.2em 2.8em;
+  text-decoration: none;
+  text-align: center;
+  text-transform: uppercase;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+          transition: box-shadow 300ms ease-in-out, color 300ms ease-in-out;
+  &:hover {
+    box-shadow: 0 0 40px 40px $red inset;
+        }}
+    
+    input[type=radio] {
+     -webkit-appearance: none;
+     -moz-appearance: none;
+     appearance: none;
+     display: inline-block;
+     position: relative;
+     background-color: #ffb366;
+     color: #666;
+     top: 10px;
+     height: 30px;
+     width: 30px;
+     border: 0;
+     border-radius: 50px;
+     cursor: pointer;     
+     margin-right: 7px;
+     outline: none;
+     margin-top: 5px;
+        
+    }
+    
+    input[type=radio]:checked::before {
+     position: absolute;
+     font: 13px/1 'Open Sans', sans-serif;
+     left: 11px;
+     top: 7px;
+     content: '\02143';
+     transform: rotate(40deg);
+    }
+    
+    input[type=radio]:hover {
+     background-color: #ffb84d;
+        
+    }
+    
+    input[type=radio]:checked {
+     background-color: #ffb84d;
+    }
+    
+    select {
+      -moz-appearance: none;
+      -webkit-appearance: none;
+      appearance: none;
+      border: 1px solid #ffb366 ;
+      width: 70px;
+      height: 47px;
+      outline:0;
+      background-color: #ffb366;
+      font-size: 15px;
+      cursor: pointer;
+      border-radius: 0.6em;
+      text-align: center;
+      text-align-last: center;
+      color: #256c74;
+}
+
+    select:hover {
+       background-color: #ffb84d; 
+        cursor: pointer;
+    }
+    
+    option[selected=selected] {
+    background-color: #ffb366;    
+        
+    }
+    
+ 
+     input[type=number]{
+     background-color: #ffb366; 
+        width: 80px;
+         height: 50px;
+         font-size: 15px;
+         padding-left: 40px;
+        border: none;
+         margin-top: 15px;
+         cursor: pointer;
+         border-radius: 0.6em;
+         color: #256c74;
+         
+    } 
+    
+    
+    .column{
+        display: inline-block;
+/*        border:1px solid red;*/
+        vertical-align: top;
+        margin: 15px;
+    }
+    
+/*
+    .bottom_row{
+        border:1px solid red;
+    }
+    
+*/
+
+    
+    
+
+    
+    
+    
+</style>
+    
+</head>
+<body>
+    <center>
+   <div class="first column">
+      <div class="rect first_block">
+      <label for="block_width">Width</label><br>
+      <input id="block_width"  type="number" value="100">
+      </div>
+    
+
+      <br>
+      <div class="rect second_block">
+      <label for="block_height">Height</label><br>
+      <input id="block_height" type="number" value="200"> 
+      </div>
+       
+       </div>
+      
+      
+    <div class="style_select column">
+        <label for="block_border">Border width</label><br>
+      <select id="block_border">
+          <option >1</option>
+          <option selected="selected">5</option>
+          <option >10</option>
+       </select>
+          
+    </div>
+      
+   
+    
+    <div class="third column">
+<div class="border_style">
+    Border color<br>
+      <input id="block__border_color_1" type="radio" name="block_border_color" checked value="red">
+      <label for="block__border_color_1">Red</label>   
+      <input id="block__border_color_2" type="radio" name="block_border_color" value="green">
+      <label for="block__border_color_2">Green</label>
+      <input id="block__border_color_3" type="radio" name="block_border_color" value="blue">
+      <label for="block__border_color_3">Blue</label>
+     </div>      
+      <br><br>
+    <div class="background_style">
+    Background color<br>    
+     <input id="block__background_color_1" type="radio" name="block_background_color" checked value="red">
+      <label for="block__background_color_1">Red</label>   
+      <input id="block__background_color_2" type="radio" name="block_background_color" value="green">
+      <label for="block__background_color_2">Green</label>
+      <input id="block__background_color_3" type="radio" name="block_background_color" value="blue">
+      <label for="block__background_color_3">Blue</label>
+    </div>
+    </div>
+    
+    
+    <div class="bottom_row">
+      <button id="create_block">Create</button>
+    </div>
+       
+      
+      <!-- контейнер для DIV который будет создаваться -->
+      <div id="box_container"></div>
+        </center>
+</body>
+    
+    <script type="text/javascript">
+  
+
+    function create_box(width, height, border, border_color, backgroundColor){
+
+      var box = document.createElement("div");  // создаем элемент DIV
+
+      // тут указываем его параметры
+      box.style.width = `${width}px`; 
+      box.style.height = `${height}px`;
+      box.style.border = `${border}px solid ${border_color}`;
+      box.style.backgroundColor = `${backgroundColor}`;
+
+      // возвращаем объект 
+      return box;
+
+    }        
+        
+        
+    window.onload = function(){
+        
+      var border_colors = {
+          red:'#ff3385',
+          green: '#00995c',
+          blue:'#0000cc'
+      }
+      
+      var backgound_colors = {
+          red:'#ff99cc',
+          green: '#00b33c',
+          blue:'#b3b3ff'
+          
+      }
+              
+     
+
+      // кнопке button1 назначаем событие 
+      document.querySelector("#create_block").onclick = function(){
+
+          
+          // по ID находим HTML элементы
+          var button1 = document.querySelector("#create_block")      
+          var block_width = document.querySelector("#block_width").value;
+          var block_height = document.querySelector("#block_height").value;
+          var block_border = document.querySelector("#block_border").value;
+          
+          
+          // находим выбранных RadioButton
+          var block_border_color = document.querySelector("input[name='block_border_color']:checked").value;
+          var block_background_color = document.querySelector("input[name='block_background_color']:checked").value
+
+          // создаем объект DIV вызовом функции
+          var box = create_box(block_width, block_height, block_border, border_colors[block_border_color],backgound_colors[block_background_color]);
+
+          // находим по Iв DIV в который добавим созданный объект
+          var box_container = document.querySelector("#box_container")
+          
+          // очищаем все что было в box_container
+          box_container.innerHTML="";
+
+          // добаялвем наш объет
+          box_container.appendChild(box);
+        }
+     
+    }
+
+    
+    
+    </script>
+</html>
+
+
+
